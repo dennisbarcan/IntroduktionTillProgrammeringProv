@@ -14,8 +14,7 @@ public class TextAnalyzer {
         while (true) {
             String input = scanner.nextLine(); // Läs in text
 
-            if (input.equalsIgnoreCase("stop")) { // Kontrollera om "stop" skrivs
-                //Har använt IgnoreCase så att det inte spelar någon roll om man har stora eller små bokstäver.
+            if (counter.isStop(input)) { //Kontrollerar om användaren har skrivit stop i TextCounter.
                 break; // Avslutar loopen
             }
 
@@ -26,6 +25,8 @@ public class TextAnalyzer {
         // Skriver ut statistik
         System.out.println("Du skrev totalt " + counter.getCharacterCount() + " tecken.");
         System.out.println("Du skrev totalt " + counter.getRowCount() + " rader.");
+        System.out.println("Du skrev totalt " + counter.getWordCount() + " ord.");
+        System.out.println("Det längsta ordet var: " + counter.getLongestWord());
         System.out.println("Programmet avslutas.");
         scanner.close();
     }
